@@ -2,7 +2,7 @@
   "apps": [{
     "name": "initApi",
     "script": "production.js",
-    "cwd": "/Users/minya/Desktop/initApi",
+    "cwd": "/Users/minya/Desktop/initApi/initApi",
     "exec_mode": "fork",
     "max_memory_restart": "1G",
     "autorestart": true,
