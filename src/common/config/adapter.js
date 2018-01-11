@@ -2,7 +2,6 @@ const fileCache = require('think-cache-file');
 const nunjucks = require('think-view-nunjucks');
 const ejs = require('think-view-ejs');
 const fileSession = require('think-session-file');
-const mysql = require('think-model-mysql');
 const {
     Console,
     File,
@@ -33,22 +32,18 @@ exports.cache = {
  * @type {Object}
  */
 exports.model = {
-    type: 'mysql',
+    type: 'mongo',
     common: {
         logConnect: isDev,
-        logSql: isDev,
         logger: msg => think.logger.info(msg)
     },
-    mysql: {
-        handle: mysql,
-        database: '',
-        prefix: 'think_',
-        encoding: 'utf8',
-        host: '127.0.0.1',
+    mongo: {
+        host: '',
         port: '',
-        user: 'root',
-        password: 'root',
-        dateStrings: true
+        user: '',
+        password: '',
+        database: '',
+        prefix: '',
     }
 };
 

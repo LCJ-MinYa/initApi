@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 module.exports = class extends think.Controller {
     static get _REST() {
         return true;
@@ -9,8 +7,7 @@ module.exports = class extends think.Controller {
         super(ctx);
         this.resource = this.getResource();
         this.id = this.getId();
-        assert(think.isFunction(this.model), 'this.model must be a function');
-        this.modelInstance = this.model(this.resource);
+        this.modelInstance = this.mongo(this.resource);
     }
     __before() {
         if (this.isGet) {

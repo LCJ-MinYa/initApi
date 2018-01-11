@@ -1,8 +1,11 @@
 const BaseRest = require('./rest.js');
 
 module.exports = class extends BaseRest {
-	indexAction() {
-		if (this.isPost) {
+	async indexAction() {
+		if (this.isGet) {
+			const num = think.mongo('RoomList');
+			const data = await num.find();
+			console.log(data);
 			this.success({
 				a: 1,
 				b: 2
